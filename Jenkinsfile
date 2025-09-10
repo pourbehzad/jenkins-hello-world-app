@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                bat 'nohup node app.js > app.log &'
+                bat 'start /B node app.js'
             }
         }
     }
