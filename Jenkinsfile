@@ -11,21 +11,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Installing Node.js dependencies...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                sh 'nohup node app.js > app.log &'
+                bat 'nohup node app.js > app.log &'
             }
         }
     }
